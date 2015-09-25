@@ -17,9 +17,6 @@
         Pavel Sokolov
     </author>
 
-    <!-- Permissions -->
-    <uses-permission android:name="android.permission.CAMERA"/>
-
     <!-- We'll include the Barcode plugin as an example -->
     <gap:plugin name="nl.x-services.plugins.flashlight" />
 </widget>
