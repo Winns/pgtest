@@ -1,0 +1,243 @@
+/* ====== Background ====== */
+	#bg {
+		z-index: -1;
+
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%; 
+		height: 100%;
+
+		background: #f3f3f3;
+		background: -moz-linear-gradient(-45deg,  #f3f3f3 0%, #f1f1f1 33%, #d2d3d4 61%, #d0d1d3 100%);
+		background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f3f3f3), color-stop(33%,#f1f1f1), color-stop(61%,#d2d3d4), color-stop(100%,#d0d1d3));
+		background: -webkit-linear-gradient(-45deg,  #f3f3f3 0%,#f1f1f1 33%,#d2d3d4 61%,#d0d1d3 100%);
+		background: -o-linear-gradient(-45deg,  #f3f3f3 0%,#f1f1f1 33%,#d2d3d4 61%,#d0d1d3 100%);
+		background: -ms-linear-gradient(-45deg,  #f3f3f3 0%,#f1f1f1 33%,#d2d3d4 61%,#d0d1d3 100%);
+		background: linear-gradient(135deg,  #f3f3f3 0%,#f1f1f1 33%,#d2d3d4 61%,#d0d1d3 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#d0d1d3',GradientType=1 );
+	}
+
+/* ====== Menu ====== */
+	#menu {
+		@size: 40px;
+
+		position: fixed;
+		bottom: 100%; right: 0;
+		width: 100%;
+
+		.btn-trigger {
+			position: absolute;
+			bottom: -@size; right: 0;
+
+			width: @size; height: @size;
+
+			line-height: @size;
+			text-align: center;
+			font-size: 28px;
+
+			cursor: pointer;
+		}
+
+		.content {
+			.transition( transform 0.35s, opacity 0.35s; );
+
+			opacity: 0;
+			position: absolute;
+			bottom: 0;
+			padding: 32px;
+			width: 100%;
+
+			background: #fff;
+
+			ul {
+				@size: 60px;
+				display: block;
+				margin: 0 auto;
+
+				li {
+					display: block;
+					position: relative;
+
+					height: @size;
+					line-height: @size;
+					border-bottom: 1px solid @c-border-gray;
+
+					cursor: pointer;
+
+					font-size: 20px;
+
+					i {
+						.class-ani;
+
+						position: absolute;
+						top: 10px; right: 0;
+						width: 40px;
+						height: 40px;
+
+						line-height: 40px;
+						text-align: center;
+
+						border-radius: 50%;
+						border: 1px solid darken(@c-main, 3%);
+
+						.box-shadow( @box-shadow-z0 );
+
+						color: #fff;
+						background: @c-main;
+					}	
+
+					i.fa-history { font-size: 24.2px; }
+					i.fa-question { font-size: 28px; }
+				}
+
+				li:last-child { border: none; }
+
+				li:active {
+					i { .box-shadow( @box-shadow-z2 ); }
+				}
+			}
+		}
+
+		
+		.swipe-trigger {
+			position: absolute;
+			left: 0; bottom: -60px;
+
+			width: 100%; height: 60px;
+		}
+	}
+
+	#menu.active {
+		.content { 
+			.transform( translate3d(0, 100%, 0) );
+			opacity: 1;
+			.box-shadow( @box-shadow-z1 );
+		}
+	}
+
+/* ====== Navigation ====== */
+	#navigation {
+		z-index: 2;
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%;
+
+		.bar {
+			position: relative;
+			height: 56px;
+			line-height: 56px;
+			background: #222;
+
+			ul, li { display: block; }
+
+			ul {
+				.class-clear;
+				position: relative;
+
+				margin: 0 auto;
+				max-width: 400px;
+
+				li {
+					opacity: 0.4;
+
+					display: block;
+					position: relative;
+					float: left;
+					
+					padding: 0 20px;
+					height: 56px;
+					line-height: 56px;
+					border-bottom: 4px solid transparent;
+					cursor: pointer;
+
+					font-weight: bold;
+					color: #fff;
+				}
+
+				li.active {
+					opacity: 1;
+					border-color: @c-main;
+				}
+			}
+		}
+
+		.spacer { height: 10px; }
+	}
+
+/* ====== Pages ====== */
+/*
+	т.к. вебкит говно приходится ставить position: absolute;
+*/
+	#pages {
+		z-index: 1;
+		position: absolute;
+		top: 56px;
+		bottom: 0;
+		left: 0; right: 0;
+
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+	.page {
+		z-index: 1;
+		position: absolute;
+		top: 0; left: 0;
+		right: 0; bottom: 0;
+
+		opacity: 0;
+	}
+		.page.active { z-index: 2; }
+
+	.page .b-text {
+		padding: 20px 0;
+		font-size: 14px;
+	}
+
+	.page .b-quote {
+		padding: 20px 0;
+		font-size: 14px;
+
+		border: 1px dashed @c-border-gray;
+
+		background: #fff;
+	}
+
+
+/* ====== Flashlight ====== */
+	#page-flashlight {
+		.btn-toggle {
+			.class-button-round( #b0bec5, #607d8b, 120px );
+
+			.class-icon;
+
+			position: absolute;
+			top: 50%; left: 50%;
+			margin: -60px 0 0 -60px;
+
+			font-size: 60px;
+
+			&:after {
+				content: '\f0eb';
+				line-height: 112px;
+			}
+
+			&:hover {
+				border-color: #607d8b;
+				background: lighten(#607d8b, 8%);
+			}
+			
+			&:active {
+				border-color: darken(#607d8b, 8%);
+				background: #607d8b;
+
+				.transform( scale(0.8) );
+			}
+
+			&.active {
+				border-color: darken(#ffc107, 8%);
+				color: #222;
+				background: lighten(#ffc107, 8%);
+			}
+		}
+	}

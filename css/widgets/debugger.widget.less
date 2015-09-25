@@ -1,0 +1,66 @@
+/* ====== Debugger ====== */
+	#debugger {
+		z-index: 99999;
+
+		display: none;
+		position: fixed;
+		bottom: 0; left: 0;
+		width: 100%;
+
+		border-top: 1px solid #222;
+
+		font-family: monospace;
+		font-size: 14px;
+
+		color: #222;
+		background: #fff;
+
+		.header {
+			position: relative;
+			height: 40px;
+			line-height: 40px;
+			background: #d0d0d0;
+
+			span {
+				padding-left: 8px;
+				font-weight: bold;
+			}
+
+			i {
+				float: right;
+				padding: 0 8px;
+				height: 40px;
+				font-style: normal;
+
+				cursor: pointer;
+
+				color: #fff;
+			}
+
+			.btn-clear { background: #f90; }
+			.btn-close { background: #f20; }
+		}
+		.header:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		.content {
+			overflow-x: hidden;
+			overflow-y: auto;
+
+			display: block;
+			max-height: 200px;
+			min-height: 40px;
+
+			li {
+				display: block;
+				padding: 8px;
+				border-bottom: 1px solid #e0e0e0;
+			}
+			li:last-child { border-bottom: none; }
+		}
+	}
+
+	#debugger.active { display: block; }

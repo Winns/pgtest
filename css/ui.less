@@ -1,0 +1,349 @@
+
+/* ====== Inputs ====== */
+	.g-input-wrapper {
+		position: relative;
+		* { vertical-align: top; }
+
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"],
+		textarea 
+		{
+			-webkit-transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+			-o-transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+			transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+			
+			border-radius: @ui-border-radius;
+			border: 1px solid rgba(0, 0, 0, 0.3);
+
+			font-family: @f-main;
+			font-size: 14px;
+
+			&:focus, &:hover {
+				border: 1px solid rgba(0, 0, 0, 0.6);
+				outline: 0;
+			}
+
+			&.error {
+				border-color: @c-red;
+			}
+		}
+		
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"],
+		textarea,
+		select, option { padding: 4px 8px; }
+		
+		select { border: 1px solid rgba(0, 0, 0, 0.3); }
+	}
+	
+	.g-input-wrapper.with-icon {
+		.icon {
+			position: absolute;
+			top: 0; left: 0;
+			width: 40px; height: 100%;
+
+			line-height: 40px;
+			text-align: center;
+			cursor: default;
+		}
+
+		select,
+		input[type="text"],
+		input[type="number"], 
+		input[type="email"],
+		input[type="password"],
+		input[type="file"] {
+			padding-left: 40px;
+		}
+		
+		textarea {
+			padding: 10px 8px 8px 40px;
+			min-height: 40px;
+		}
+	}
+	
+	.g-input-wrapper.with-required {
+		i.required {
+			position: absolute;
+			top: 0; left: auto;
+			right: 0;
+			width: 30px; height: 40px;
+
+			line-height: 40px;
+			text-align: center;
+			font-style: normal;
+			font-size: 10px;
+			cursor: default;
+			
+			color: @c-red;
+		}
+
+		input[type="text"],
+		input[type="number"], 
+		input[type="email"],
+		input[type="password"],
+		input[type="file"],
+		textarea {
+			padding-right: 40px !important;
+		}
+		
+		textarea {
+			padding: 10px 40px 8px 8px;
+			min-height: 50px;
+		}
+	}
+	
+	.g-input-wrapper {
+		select,
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"] { 
+			width: 220px; height: 40px; 
+		}
+		
+		textarea { width: 220px; height: 70px; resize: none; }
+	}
+	
+	.g-input-wrapper.nosize {
+		select { width: auto; height: auto; }
+	}
+	
+	.g-input-wrapper.resize {
+		textarea { resize: vertical; }
+	}
+	
+	.g-input-wrapper.high {
+		textarea { height: 120px; }
+	}
+	
+	.g-input-wrapper.high-plus {
+		textarea { height: 220px; }
+	}
+
+	.g-input-wrapper.small {
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"],
+		textarea,
+		select { width: 70px; }
+	}
+	.g-input-wrapper.medium {
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"],
+		textarea,
+		select { width: 120px }
+	}
+	.g-input-wrapper.medium-plus {
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"],
+		textarea,
+		select { width: 170px }
+	}
+	.g-input-wrapper.big {
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"],
+		textarea,
+		select { width: 200px }
+	}
+	.g-input-wrapper.big-plus {
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"],
+		textarea,
+		select { width: 240px }
+	}
+	.g-input-wrapper.full {
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"],
+		textarea,
+		select { width: 100% }
+	}
+	
+	.g-input-wrapper.mobile-full {
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"],
+		textarea,
+		select { width: 300px; }
+	}
+	.g-input-wrapper.mobile-half {
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="password"],
+		input[type="file"],
+		textarea,
+		select { width: 140px; }
+	}
+	
+	.g-input-wrapper.inline {
+		display: inline-block;
+	}
+
+	@media only screen and (max-width: 480px) {
+		.g-input-wrapper.responsive {
+			display: block;
+			width: 100%;
+			
+			input[type="text"], 
+			input[type="number"], 
+			input[type="email"], 
+			input[type="password"],
+			input[type="file"],
+			textarea,
+			select { width: 100%; }
+
+			table { .class-responsive-table; }
+		}
+	}
+
+
+/* ====== Button base class ======*/
+	.class-button-base() {
+		.class-unselectable;
+
+		display: inline-block;
+		padding: 0 40px;
+		height: 40px;
+		line-height: 40px;
+		
+		text-decoration: none;
+		text-align: center;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		
+		cursor: pointer;
+		
+		&:hover { text-decoration: none; }
+		
+		&.full {
+			padding: 0;
+			width: 100%;
+		}
+		
+		&.big {
+			padding: 0;
+			width: 200px;
+		}
+		
+		&.medium {
+			padding: 0;
+			width: 150px;
+		}
+		
+		&.small {
+			padding: 0;
+			width: 100px;
+		}
+		
+		&.auto {
+			padding: 0 20px;
+		}
+	}
+
+/* ====== Default Button ======*/
+	.class-button( @textColor: #fff, @bg: @c-main ) {
+		@bordercolor: darken(@bg, 5%);
+		
+		.class-ani;
+		.class-button-base;
+		
+		border-radius: 2px;
+		
+		border-bottom: 3px solid @bordercolor;
+		border-top: 1px solid @bordercolor;
+		border-left: 1px solid @bordercolor;
+		border-right: 1px solid @bordercolor;
+
+		color: @textColor;
+		background: @bg;
+		
+		&:hover {
+			border-color: @bg;
+			background: lighten(@bg, 8%);
+		}
+		
+		&:active {
+			border-color: @bordercolor;
+			background: @bg;
+		}
+	}
+
+	.g-button { 
+		.class-button(); 
+	}
+
+/* ====== Round button ====== */
+	.class-button-round( @textColor: #fff, @bg: @c-main, @size: 60px ) {
+		@bordercolor: darken(@bg, 5%);
+		
+		.class-ani;
+		.class-unselectable;
+
+		display: block;
+		width: @size;
+		height: @size;
+		line-height: @size - 8px;
+		text-align: center;
+		
+		border-radius: 50%;
+		border: 4px solid @bordercolor;
+
+		cursor: pointer;
+		font-weight: bold;
+		font-size: @size/3;
+
+		color: @textColor;
+		background: @bg;
+		
+		&:hover {
+			border-color: @bg;
+			background: lighten(@bg, 8%);
+		}
+		
+		&:active {
+			border-color: @bordercolor;
+			background: @bg;
+
+			.transform( scale(0.8) );
+		}
+
+		&.tag-center {
+			margin: 0 auto;
+		}
+	}
+
+	.g-button-round {
+		.class-button-round;
+	}
+
+	.g-button-round.tag-big {
+		.class-button-round( @textColor: #fff, @bg: @c-main, @size: 120px );
+	}

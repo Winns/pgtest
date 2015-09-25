@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>PG Test</title>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/compiled.css">
+</head>
+<body>
+
+	<!-- Background -->
+	<div id="bg"></div>
+	<!-- END Background -->
+
+	<!-- Navigation -->
+	<div id="navigation">
+		<div class="bar">
+			<ul>
+				<li class="active js-app-link" data-target="flashlight">Flashlight</li>
+				<li class="js-app-link" data-target="vibration">Vibration</li>
+				<li class="js-app-link" data-target="compass">Compass</li>
+			</ul>
+		</div>
+		<div class="spacer"></div>
+	</div>
+	<!-- END Navigation -->
+
+	<!-- Pages -->
+	<div id="pages">
+
+		<!-- Flashlight-->
+		<div id="page-flashlight" class="page g-page-delault active">
+			<div class="btn-toggle g-button-round"></div>
+		</div>
+		<!-- END -->
+
+		<!-- Vibration -->
+		<div id="page-vibration" class="page g-page-delault">
+			<div class="g-row">
+				<div class="g-wrap">
+
+					Vibration
+
+				</div>
+			</div>
+		</div>
+		<!-- END -->
+
+		<!-- Compass -->
+		<div id="page-compass" class="page g-page-delault">
+			<div class="g-row">
+				<div class="g-wrap">
+
+					Compass
+
+				</div>
+			</div>
+		</div>
+		<!-- END -->
+
+	</div>
+	<!-- END Pages -->
+
+
+	<!-- App -->
+	<script>
+		var app = {
+			page: {}
+		};
+	</script>
+
+	<!-- Libs -->
+	<script src="cordova.js"></script>
+	<script src="js/helpers/jquery.min.js"></script>
+	<script src="js/helpers/jquery.transit.min.js"></script>
+	<script src="js/helpers/velocity.min.js"></script>
+	<script src="js/helpers/hammer.min.js"></script>
+
+	<!-- Core -->
+	<script src="js/helpers/helpers.js"></script>
+	<script src="js/helpers/page.js"></script>
+
+	<!-- Views 
+	<script src="js/view/example.view.js"></script>
+	-->
+
+	<!-- Widgets -->
+	<script src="js/widgets/navigation.widget.js"></script>
+	<script src="js/widgets/debugger.widget.js"></script>
+
+	<!-- Pages -->
+	<script src="js/page/flashlight.page.js"></script>
+	<script src="js/page/vibration.page.js"></script>
+	<script src="js/page/compass.page.js"></script>
+
+	<!-- App -->
+	<script src="js/app.js"></script>
+	
+</body>
+</html>

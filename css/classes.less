@@ -1,0 +1,31 @@
+.class-ani(@time: 0.25s) {
+	.transition( all @time);
+	
+	&:hover { .transition( all @time); }
+}
+
+.class-clear() {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+.class-icon() {
+	font-family: @f-icons;
+	font-style: normal;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.class-unselectable() {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

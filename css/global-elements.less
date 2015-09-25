@@ -1,0 +1,98 @@
+	.g-center {
+		margin: 20px 0;
+		text-align: center;
+	}
+
+/* ====== Page row ====== */
+	.g-row {
+		position: relative;
+		margin: 0 auto;
+		max-width: 400px;
+	}
+
+/* ====== Content wrap ====== */
+	.g-wrap {
+		position: relative;
+		padding: 8px;
+	}
+
+/* ====== Page title ====== */
+	.g-page-title {
+		.class-clear;
+
+		display: block;
+		position: relative;
+		margin: 8px auto 16px auto;
+		
+		max-width: 400px;
+		min-height: 60px;
+
+		font-size: 24px;
+		font-family: @f-header;
+		font-weight: bold;
+
+		i {
+			display: block;
+			float: left;
+			margin-right: 16px;
+			width: 60px;
+			height: 60px;
+
+			line-height: 60px;
+			text-align: center;
+			font-size: 30px;
+
+			border-radius: 50%;
+			border: 1px solid darken(@c-main, 3%);
+
+			.box-shadow( @box-shadow-z0 );
+
+			color: #fff;
+			background: @c-main;
+		}
+
+		.table {
+			overflow: hidden;
+			display: table;
+			height: 60px;
+
+			.cell { 
+				display: table-cell; 
+				vertical-align: middle;
+				line-height: 130%;
+			}
+		}
+	}
+
+/* ====== Error ====== */
+	.g-error {
+		display: none;
+		
+		position: absolute;
+		bottom: 100%; left: 0;
+		margin-bottom: 4px;
+		padding: 6px 6px;
+		
+		border-radius: @ui-border-radius;
+		
+		font-size: 14px;
+
+		color: #fff;
+		background: @c-red;
+	}
+		.g-error:after {
+			content: ' ';
+			position: absolute; 
+			top: 100%; left: 20px; 
+			height: 0; width: 0; 
+			margin-left: -6px;
+			
+			pointer-events: none; 
+			
+			border: solid transparent;
+			border-color: rgba(0, 0, 0, 0);
+			border-top-color: @c-red;
+			border-width: 6px; 
+		}
+
+		.g-error.active { display: block; }
