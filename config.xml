@@ -21,7 +21,5 @@
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <!-- We'll include the Barcode plugin as an example -->
-    <gap:plugin name="nl.x-services.plugins.flashlight" />
-    <gap:plugin name="org.apache.cordova.vibration"/>
-
+    <gap:plugin name="nl.xservices.plugins.Flashlight"/>
 </widget>
