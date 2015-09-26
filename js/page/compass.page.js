@@ -88,11 +88,13 @@
 		onCompassUpdate: function( data ) {
 			this.el.$val.html( data.magneticHeading.toFixed(0) );
 
+			var deg = -data.magneticHeading;
+
 			this.el.$arrow.css({
-				'-webkit-transform': 'rotate('+ data.magneticHeading +'deg)',
-				'-moz-transform': 'rotate('+ data.magneticHeading +'deg)',
-				'-ms-transform': 'rotate('+ data.magneticHeading +'deg)',
-				'transform': 'rotate('+ data.magneticHeading +'deg)'});
+				'-webkit-transform': 'rotate('+ deg +'deg)',
+				'-moz-transform': 'rotate('+ deg +'deg)',
+				'-ms-transform': 'rotate('+ deg +'deg)',
+				'transform': 'rotate('+ deg +'deg)'});
 		},
 
 		bindEvents: function() {
