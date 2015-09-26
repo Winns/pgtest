@@ -241,3 +241,41 @@
 			}
 		}
 	}
+
+/* ====== Vibration ====== */
+	#page-vibration {
+		.btn-toggle {
+			.class-button-round( #b0bec5, #607d8b, 120px );
+
+			.class-icon;
+
+			position: absolute;
+			top: 50%; left: 50%;
+			margin: -60px 0 0 -60px;
+
+			font-size: 60px;
+
+			&:after {
+				content: '\f0e7';
+				line-height: 112px;
+			}
+
+			&:hover {
+				border-color: #607d8b;
+				background: lighten(#607d8b, 8%);
+			}
+			
+			&:active {
+				border-color: darken(#607d8b, 8%);
+				background: #607d8b;
+
+				.transform( scale(0.8) );
+			}
+
+			&.active {
+				border-color: darken(#ffc107, 8%);
+				color: #222;
+				background: lighten(#ffc107, 8%);
+			}
+		}
+	}

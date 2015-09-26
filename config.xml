@@ -19,6 +19,7 @@
 
     <gap:platform name="android" />
 
-    <!-- We'll include the Barcode plugin as an example -->
+    <!-- Plugins -->
     <gap:plugin name="nl.x-services.plugins.flashlight" />
+    <gap:plugin name="org.apache.cordova.vibration"  />
 </widget>

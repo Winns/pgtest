@@ -10,6 +10,8 @@
 			isAvailable: false
 		},
 
+		fl: null,
+
 		// Methods
 		onShow: function( e ) {
 			if (e == 'next') {
@@ -53,20 +55,7 @@
 
 				window.plugins.flashlight.available(function( isAvailable ) {
 					self.flags.isAvailable = isAvailable
-
-					/*
-					// switch on
-					window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
-
-					// switch off after 3 seconds
-					setTimeout(function() {
-						window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
-					}, 5000);
-
-					} else {
-						alert("Flashlight not available on this device");
-					}
-					*/
+					self.fl = window.plugins.flashlight;
 				});
 			} catch(e) {
 				alert( 'error ' + e.name + ':' + e.message + '<br>' + e.stack );
@@ -77,12 +66,12 @@
 		on: function() {
 			if (!this.flags.isAvailable) return;
 
-			window.plugins.flashlight.switchOn();
+			this.fl.switchOn();
 		},
 		off: function() {
 			if (!this.flags.isAvailable) return;
 
-			window.plugins.flashlight.switchOff();
+			this.fl.switchOff();
 		},
 
 
