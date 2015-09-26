@@ -87,7 +87,12 @@
 
 		onCompassUpdate: function( data ) {
 			this.el.$val.html( data.magneticHeading.toFixed(0) );
-			this.el.$arrow.transition({ rotate: (data.magneticHeading) + 'deg' });
+
+			this.el.$arrow.css({
+				'-webkit-transform': 'rotate('+ data.magneticHeading +'deg)',
+				'-moz-transform': 'rotate('+ data.magneticHeading +'deg)',
+				'-ms-transform': 'rotate('+ data.magneticHeading +'deg)',
+				'transform': 'rotate('+ data.magneticHeading +'deg)'});
 		},
 
 		bindEvents: function() {
