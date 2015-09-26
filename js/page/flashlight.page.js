@@ -49,23 +49,28 @@
 		prepare: function() {
 			var self = this;
 
-			window.plugins.flashlight.available(function( isAvailable ) {
-				self.flags.isAvailable = isAvailable
+			try {
 
-				/*
-				// switch on
-				window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
+				window.plugins.flashlight.available(function( isAvailable ) {
+					self.flags.isAvailable = isAvailable
 
-				// switch off after 3 seconds
-				setTimeout(function() {
-					window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
-				}, 5000);
+					/*
+					// switch on
+					window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
 
-				} else {
-					alert("Flashlight not available on this device");
-				}
-				*/
-			});
+					// switch off after 3 seconds
+					setTimeout(function() {
+						window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
+					}, 5000);
+
+					} else {
+						alert("Flashlight not available on this device");
+					}
+					*/
+				});
+			} catch(e) {
+				alert( 'error' + (typeof e) );
+			}
 		},
 
 		on: function() {
