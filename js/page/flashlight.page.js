@@ -69,7 +69,8 @@
 					*/
 				});
 			} catch(e) {
-				app.widget.debugger.show( 'error' + e.name + ':' + e.message + '<br>' + e.stack );
+				alert( 'error ' + e.name + ':' + e.message + '<br>' + e.stack );
+				//app.widget.debugger.show( 'error' + e.name + ':' + e.message + '<br>' + e.stack );
 			}
 		},
 
