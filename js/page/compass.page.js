@@ -78,8 +78,6 @@
 				function(e) { app.widget.debugger.show( ('error ' + e.code) ); }, 
 				{ frequency: 1000 }
 			);
-
-			app.widget.debugger.show( 'this.flags.isAvailable ' + this.flags.isAvailable );
 		},
 		off: function() {
 			if (!this.flags.isAvailable) return;
