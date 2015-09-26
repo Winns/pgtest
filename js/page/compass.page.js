@@ -79,6 +79,8 @@
 				function(e) { app.widget.debugger.show( ('error ' + e.code) ); }, 
 				{ frequency: 1000 }
 			);
+
+			app.widget.debugger.show( 'this.flags.isAvailable ' + this.flags.isAvailable );
 		},
 		off: function() {
 			if (!this.flags.isAvailable) return;
@@ -87,6 +89,8 @@
 		},
 
 		onCompassUpdate: function( data ) {
+			app.widget.debugger.show( 'data ' + data.magneticHeading );
+			
 			this.el.$val( data.magneticHeading );
 			this.el.$arrow.transition({ rotate: data.magneticHeading + 'deg' });
 		},
