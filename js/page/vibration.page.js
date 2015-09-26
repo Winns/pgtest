@@ -64,7 +64,7 @@
 		on: function() {
 			if (!this.flags.isAvailable) return;
 
-			navigator.vibrate(5000)
+			navigator.vibrate(15000)
 		},
 		off: function() {
 			if (!this.flags.isAvailable) return;
