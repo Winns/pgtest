@@ -49,7 +49,6 @@
 
 		cacheElements: function() {
 			this.el.$page 	= $( this.el.page );
-			this.el.$btn 	= this.el.$page.find( '.btn-toggle' );
 			this.el.$val 	= this.el.$page.find( '.val' );
 			this.el.$arrow 	= this.el.$page.find( '.arrow' );
 		},
@@ -90,9 +89,9 @@
 
 		onCompassUpdate: function( data ) {
 			app.widget.debugger.show( 'data ' + data.magneticHeading );
-			
-			this.el.$val( data.magneticHeading );
-			this.el.$arrow.transition({ rotate: data.magneticHeading + 'deg' });
+
+			this.el.$val.html( data.magneticHeading );
+			this.el.$arrow.transition({ rotate: (data.magneticHeading) + 'deg' });
 		},
 
 		bindEvents: function() {
