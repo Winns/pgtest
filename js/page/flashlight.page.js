@@ -1,6 +1,8 @@
 (function() {
 
 	app.page.flashlight = new Page({
+		name: 'flashlight',
+
 		el: {
 			page: '#page-flashlight'
 		},
@@ -56,6 +58,8 @@
 				window.plugins.flashlight.available(function( isAvailable ) {
 					self.flags.isAvailable = isAvailable
 					self.fl = window.plugins.flashlight;
+
+					app.trigger('PAGE_READY', self.name);
 				});
 			} catch(e) {
 				app.widget.debugger.show( ('error ' + e.name + ':' + e.message + '<br>' + e.stack) );

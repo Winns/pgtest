@@ -87,6 +87,8 @@
 			this.cacheElements();
 			this.prepare();
 			this.bindEvents();
+
+			app.trigger('PAGE_READY', this.name);
 		}
 	});
 

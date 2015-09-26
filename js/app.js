@@ -82,7 +82,10 @@ $(function() {
 		this.initEvents();
 		this.handleEvent();
 
-		this.setPage( this.currentPage );
+		this.on('PAGE_READY', function( name ) {
+			if (name === self.currentPage)
+				self.setPage( self.currentPage );
+		});
 	};
 
 	document.addEventListener('deviceready', app.init.bind(app), false);

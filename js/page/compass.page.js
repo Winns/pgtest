@@ -90,11 +90,7 @@
 
 			var deg = -data.magneticHeading;
 
-			this.el.$arrow.css({
-				'-webkit-transform': 'rotate('+ deg +'deg)',
-				'-moz-transform': 'rotate('+ deg +'deg)',
-				'-ms-transform': 'rotate('+ deg +'deg)',
-				'transform': 'rotate('+ deg +'deg)'});
+			this.el.$arrow.transition({ rotate: deg + 'deg', duration: 100 });
 		},
 
 		bindEvents: function() {
@@ -115,6 +111,8 @@
 			this.cacheElements();
 			this.prepare();
 			this.bindEvents();
+
+			app.trigger('PAGE_READY', this.name);
 		}
 	});
 
