@@ -85,5 +85,6 @@ $(function() {
 		this.setPage( this.currentPage );
 	};
 
-	document.addEventListener('deviceready', app.init.bind(app), false);
+	//document.addEventListener('deviceready', app.init.bind(app), false);
+	app.init();
 });

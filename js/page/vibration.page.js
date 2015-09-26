@@ -10,8 +10,6 @@
 			isAvailable: false
 		},
 
-		fl: null,
-
 		// Methods
 		onShow: function( e ) {
 			if (e == 'next') {
@@ -56,7 +54,6 @@
 					self.flags.isAvailable = navigator.hasOwnProperty( 'vibrate' );
 				}
 			} catch(e) {
-				alert( 'error ' + e.name + ':' + e.message + '<br>' + e.stack );
 				app.widget.debugger.show( ('error ' + e.name + ':' + e.message + '<br>' + e.stack) );
 			}
 		},

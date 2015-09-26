@@ -58,7 +58,6 @@
 					self.fl = window.plugins.flashlight;
 				});
 			} catch(e) {
-				alert( 'error ' + e.name + ':' + e.message + '<br>' + e.stack );
 				app.widget.debugger.show( ('error ' + e.name + ':' + e.message + '<br>' + e.stack) );
 			}
 		},
