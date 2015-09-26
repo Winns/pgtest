@@ -88,10 +88,8 @@
 		},
 
 		onCompassUpdate: function( data ) {
-			app.widget.debugger.show( 'data ' + data.magneticHeading );
-
-			this.el.$val.html( data.magneticHeading );
-			this.el.$arrow.transition({ rotate: (data.magneticHeading) + 'deg' });
+			this.el.$val.html( data.magneticHeading.toFixed(0) );
+			this.el.$arrow.transition({ rotate: (data.magneticHeading-180) + 'deg' });
 		},
 
 		bindEvents: function() {
