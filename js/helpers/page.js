@@ -1,4 +1,6 @@
 var Page = function( cfg ) {
+	var self = this;
+
 	this.flags = {
 		active: false
 	};
@@ -34,8 +36,6 @@ var Page = function( cfg ) {
 			this.init();
 		};
 	};
-
-	this._constructor();
 };
 
 	

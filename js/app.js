@@ -60,6 +60,13 @@ $(function() {
 		}
 	};
 
+	app.initPages = function() {
+		for (var key in this.page) {
+			app.widget.debugger.show( 'init page ' + key );
+			this.page[ key ]._constructor();
+		}
+	};
+
 	app.handleEvent = function() {
 		this.on( 'EXIT_APP', function() {
 			try {
@@ -70,6 +77,7 @@ $(function() {
 
 	app.init = function() {
 		this.initWidgets();
+		this.initPages();
 		this.initRouter();
 		this.initEvents();
 		this.handleEvent();
@@ -77,5 +85,5 @@ $(function() {
 		this.setPage( this.currentPage );
 	};
 
-	app.init();
+	document.addEventListener('deviceready', app.init.bind(app), false);
 });
