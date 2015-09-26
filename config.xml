@@ -22,5 +22,6 @@
     <!-- Plugins -->
     <gap:plugin name="nl.x-services.plugins.flashlight" />
     <gap:plugin name="org.apache.cordova.vibration"  />
-    <gap:plugin name="org.apache.cordova.deviceorientation.CompassListener"  />
+    <gap:plugin name="org.apache.cordova.device-orientation" />
+    
 </widget>
