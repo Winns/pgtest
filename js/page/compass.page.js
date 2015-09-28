@@ -108,9 +108,9 @@
 				dif = getDif(oldA360, newA360);
 
 			if (oldA360 < newA360)
-				return oldA - dif;
+				return math.round(oldA - dif);
 			else
-				return oldA + dif;
+				return math.round(oldA + dif);
 		},
 
 		onCompassUpdate: function( data ) {
@@ -118,8 +118,6 @@
 
 			this.newA = this.fixAngle( this.oldA, -data.magneticHeading );
 			this.oldA = this.newA;
-
-			app.widget.debugger.show( this.newA );
 
 			this.el.$arrow.clearQueue().transition({ rotate: this.newA + 'deg', duration: 450 });
 		},
