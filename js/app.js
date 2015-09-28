@@ -82,8 +82,6 @@ $(function() {
 		this.handleEvent();
 
 		this.on('PAGE_READY', function( name ) {
-			app.widget.debugger.show( 'PAGE_READY ' + name );
-
 			if (name === app.currentPage)
 				app.setPage( app.currentPage );
 		});
