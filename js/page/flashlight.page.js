@@ -54,7 +54,6 @@
 			var self = this;
 
 			try {
-
 				window.plugins.flashlight.available(function( isAvailable ) {
 					self.flags.isAvailable = isAvailable
 					self.fl = window.plugins.flashlight;

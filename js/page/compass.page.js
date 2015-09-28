@@ -76,7 +76,7 @@
 			this.compass = navigator.compass.watchHeading(
 				this.onCompassUpdate.bind(this), 
 				function(e) { app.widget.debugger.show( ('error ' + e.code) ); }, 
-				{ frequency: 100 }
+				{ frequency: 33.3 }
 			);
 		},
 		off: function() {
@@ -90,7 +90,7 @@
 
 			var deg = -data.magneticHeading;
 
-			this.el.$arrow.transition({ rotate: deg + 'deg', duration: 80 });
+			this.el.$arrow.clearQueue().transition({ rotate: deg + 'deg', duration: 150 });
 		},
 
 		bindEvents: function() {

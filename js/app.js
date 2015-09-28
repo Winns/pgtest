@@ -27,7 +27,6 @@ $(function() {
 
 		for (var key in this.page) {
 			if (key !== name) {
-				console.log( 'hide', key, data );
 				this.page[ key ].hide( data );
 			}
 		}
@@ -85,8 +84,8 @@ $(function() {
 		this.on('PAGE_READY', function( name ) {
 			app.widget.debugger.show( 'PAGE_READY ' + name );
 
-			if (name === self.currentPage)
-				self.setPage( self.currentPage );
+			if (name === app.currentPage)
+				app.setPage( app.currentPage );
 		});
 	};
 
