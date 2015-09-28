@@ -34,8 +34,6 @@ $(function() {
 		this.page[ name ].show( data );
 
 		app.trigger( 'SET_PAGE', name );
-
-		app.widget.debugger.show( 'SET PAGE '+name );
 	};
 
 	app.initRouter = function() {

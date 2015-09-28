@@ -108,9 +108,9 @@
 				dif = getDif(oldA360, newA360);
 
 			if (oldA360 < newA360)
-				return math.round(oldA - dif);
+				return Math.round(oldA - dif);
 			else
-				return math.round(oldA + dif);
+				return Math.round(oldA + dif);
 		},
 
 		onCompassUpdate: function( data ) {
