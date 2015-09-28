@@ -95,21 +95,22 @@
 			718 -> 1 = 721
 		*/
 		fixAngle: function(oldA, newA) {
-			var oldA360 = ((oldA % 360) + 360) % 360,
-				newA360 = ((newA % 360) + 360) % 360;
-
-			var dif = Math.abs(oldA360 - newA360), a;
-
-			if (dif > 180) {
-				if (oldA360 < newA360)
-					a = newA360 - (360 + oldA360);
-				else
-					a = (360 - oldA360) + newA360;
-			} else {
-				a = dif;
+			function to360(a) {
+			   return ((a % 360) + 360) % 360;
+			};
+			   
+			function getDif(a, b) {
+			   return 180 - Math.abs(Math.abs(a - b) - 180); 
 			}
 
-			return oldA + a;
+			var oldA360 = to360(oldA),
+				newA360 = to360(newA),
+				dif = getDif(oldA360, newA360);
+
+			if (oldA360 < newA360)
+				return oldA - dif;
+			else
+				return oldA + dif;
 		},
 
 		onCompassUpdate: function( data ) {

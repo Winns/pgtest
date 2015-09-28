@@ -87,8 +87,6 @@ $(function() {
 		});
 	};
 
-	if (wIsTouchDevice())
-		document.addEventListener('deviceready', app.init.bind(app), false);
-	else
-		app.init();
+	document.addEventListener('deviceready', app.init.bind(app), false);
+	//app.init();
 });
