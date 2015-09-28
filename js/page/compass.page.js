@@ -11,6 +11,8 @@
 		},
 
 		compass: null,
+		oldA: 0,
+		newA: 0,
 
 		// Methods
 		onShow: function( e ) {
@@ -76,31 +78,52 @@
 			this.compass = navigator.compass.watchHeading(
 				this.onCompassUpdate.bind(this), 
 				function(e) { app.widget.debugger.show( ('error ' + e.code) ); }, 
-				{ frequency: 400 }
+				{ frequency: 500 }
 			);
 		},
 		off: function() {
 			if (!this.flags.isAvailable) return;
 
 			navigator.compass.clearWatch( this.compass );
+		},		
+
+		/*
+			old -> new = result;
+			5 -> 350 = -10
+			5 -> 15 = 15
+			355 -> 1 = 361
+			718 -> 1 = 721
+		*/
+		fixAngle: function(oldA, newA) {
+			var oldA360 = ((oldA % 360) + 360) % 360,
+				newA360 = ((newA % 360) + 360) % 360;
+
+			var dif = Math.abs(oldA360 - newA360), a;
+
+			if (dif > 180) {
+				if (oldA360 < newA360)
+					a = newA360 - (360 + oldA360);
+				else
+					a = (360 - oldA360) + newA360;
+			} else {
+				a = dif;
+			}
+
+			return oldA + a;
 		},
 
 		onCompassUpdate: function( data ) {
-			this.el.$val.html( data.magneticHeading.toFixed(0) );
+			this.el.$val.html( Math.ceil(data.magneticHeading) );
 
-			var deg = 3600 -data.magneticHeading;
+			this.newA = fixAngle( this.oldA, -data.magneticHeading );
+			this.oldA = this.newA;
 
-			this.el.$arrow.clearQueue().transition({ rotate: deg + 'deg', duration: 350 });
+			this.el.$arrow.clearQueue().transition({ rotate: this.newA + 'deg', duration: 450 });
 		},
-
-		bindEvents: function() {
-			
-		},
-
+		
 		init: function() {
 			this.cacheElements();
 			this.prepare();
-			this.bindEvents();
 
 			app.trigger('PAGE_READY', this.name);
 		}
