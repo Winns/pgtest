@@ -90,6 +90,6 @@ $(function() {
 		});
 	};
 
-	document.addEventListener('deviceready', app.init.bind(app), false);
-	//app.init();
+	//document.addEventListener('deviceready', app.init.bind(app), false);
+	app.init();
 });

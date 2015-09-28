@@ -76,7 +76,7 @@
 			this.compass = navigator.compass.watchHeading(
 				this.onCompassUpdate.bind(this), 
 				function(e) { app.widget.debugger.show( ('error ' + e.code) ); }, 
-				{ frequency: 200 }
+				{ frequency: 100 }
 			);
 		},
 		off: function() {
@@ -90,21 +90,11 @@
 
 			var deg = -data.magneticHeading;
 
-			this.el.$arrow.transition({ rotate: deg + 'deg', duration: 100 });
+			this.el.$arrow.transition({ rotate: deg + 'deg', duration: 80 });
 		},
 
 		bindEvents: function() {
-			var self = this;
-
-			this.el.$btn.on( 'click', function() {
-				if ($(this).hasClass( 'active' )) {
-					$(this).removeClass( 'active' );
-					self.off();
-				} else {
-					$(this).addClass( 'active' );
-					self.on();
-				}
-			});
+			
 		},
 
 		init: function() {
