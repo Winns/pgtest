@@ -115,12 +115,14 @@
 		onCompassUpdate: function( data ) {
 			this.el.$val.html( Math.ceil(data.magneticHeading) );
 
-			this.newA = fixAngle( this.oldA, -data.magneticHeading );
+			this.newA = this.fixAngle( this.oldA, -data.magneticHeading );
 			this.oldA = this.newA;
+
+			app.widget.debugger.show( this.newA );
 
 			this.el.$arrow.clearQueue().transition({ rotate: this.newA + 'deg', duration: 450 });
 		},
-		
+
 		init: function() {
 			this.cacheElements();
 			this.prepare();
