@@ -33,7 +33,7 @@ $(function() {
 
 		this.page[ name ].show( data );
 
-		app.trigger( 'SET_PAGE', name );
+		app.widget.debugger.show( 'page ' + name );
 	};
 
 	app.initRouter = function() {
