@@ -32,8 +32,6 @@ $(function() {
 		}
 
 		this.page[ name ].show( data );
-
-		app.widget.debugger.show( 'page ' + name );
 	};
 
 	app.initRouter = function() {
