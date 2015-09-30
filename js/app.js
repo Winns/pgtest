@@ -32,6 +32,8 @@ $(function() {
 		}
 
 		this.page[ name ].show( data );
+
+		app.trigger( 'SET_PAGE', name );
 	};
 
 	app.initRouter = function() {
@@ -59,8 +61,8 @@ $(function() {
 
 	app.initPages = function() {
 		for (var key in this.page) {
-			app.widget.debugger.show( 'init page ' + key );
 			this.page[ key ]._constructor();
+			app.widget.debugger.show( 'init page: ' + key );
 		}
 	};
 
